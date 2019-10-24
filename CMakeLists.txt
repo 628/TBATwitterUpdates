@@ -3,6 +3,7 @@ project(TBATwitterUpdates)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(TBATwitterUpdates main.cpp)
+add_executable(TBATwitterUpdates main.cpp twitterwrapper/HttpRequest.cpp twitterwrapper/HttpRequest.h)
 
-target_link_libraries(TBATwitterUpdates curl4)
+target_link_libraries(TBATwitterUpdates curl)
+target_link_libraries(TBATwitterUpdates oauth)
