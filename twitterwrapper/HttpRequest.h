@@ -8,6 +8,7 @@ class HttpRequest
 {
 public:
     static void sendPost(char *url, curl_slist *headers, char *fields);
+    static void sendPost(const char *url, curl_slist *headers, const char *fields);
 };
 
 
