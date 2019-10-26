@@ -35,3 +35,6 @@
 .idea/
 *.iml
 cmake-build-debug/
+
+# Other stuff
+build/
