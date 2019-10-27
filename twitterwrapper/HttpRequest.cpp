@@ -46,3 +46,47 @@ void HttpRequest::sendPost(const char *url, curl_slist *headers, const char *fie
         curl_easy_cleanup(curl);
     }
 }
+
+void HttpRequest::sendGet(char *url, curl_slist *headers)
+{
+    CURL *curl;
+    CURLcode res;
+
+    curl = curl_easy_init();
+    if (curl)
+    {
+        curl_easy_setopt(curl, CURLOPT_URL, url);
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+
+        res = curl_easy_perform(curl);
+
+        if (res != CURLE_OK)
+        {
+            std::cerr << res << std::endl;
+        }
+
+        curl_easy_cleanup(curl);
+    }
+}
+
+void HttpRequest::sendGet(const char *url, curl_slist *headers)
+{
+    CURL *curl;
+    CURLcode res;
+
+    curl = curl_easy_init();
+    if (curl)
+    {
+        curl_easy_setopt(curl, CURLOPT_URL, url);
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+
+        res = curl_easy_perform(curl);
+
+        if (res != CURLE_OK)
+        {
+            std::cerr << res << std::endl;
+        }
+
+        curl_easy_cleanup(curl);
+    }
+}
