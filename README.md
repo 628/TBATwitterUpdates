@@ -1,6 +1,5 @@
 # TBA Twitter Updates
 [![License](https://img.shields.io/github/license/628/TBATwitterUpdates)](https://choosealicense.com/licenses/mit/)
-[![Release](https://img.shields.io/github/v/release/628/TBATwitterUpdates)](https://github.com/628/TBATwitterUpdates/releases)
 [![LastCommit](https://img.shields.io/github/last-commit/628/TBATwitterUpdates)](https://github.com/628/TBATwitterUpdates/commits/master)  
 
 *Created for [FRC Team 1718](http://www.fightingpi.org/)*
