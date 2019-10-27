@@ -1,4 +1,8 @@
 {
   "team": "frc1718",
-  "secret": "verySecret"
+  "secret": "verySecret",
+  "accessToken": "",
+  "accessTokenSecret": "",
+  "consumerApiKey": "",
+  "consumerApiKeySecret": ""
 }
