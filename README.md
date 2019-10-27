@@ -39,7 +39,6 @@ $ TBATwitterUpdates [pathToConfigFile]
 ```
 
 ## Config
-Here's the config file format:
 ```json
 {
   "port": "3141",
