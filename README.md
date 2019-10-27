@@ -13,7 +13,8 @@ TBA Twitter Updates automagically pulls match data from TheBlueAlliance in real-
 In order to be able to send Tweets from the Twitter API, you must sign up for a [Twitter developer account](https://developer.twitter.com/en/apply-for-access.html).  
 Be sure to setup an [app](https://developer.twitter.com/en/apps) and the Account Activity API [dev environment](https://developer.twitter.com/en/account/environments).
 ### The Blue Alliance
-You need to create a webhook in order for TBA Twitter Updates to receive real-time match information, you can set one up from your [TBA Account](https://www.thebluealliance.com/account).
+You need to create a webhook in order for TBA Twitter Updates to receive real-time match information, you can set one up from your [TBA Account](https://www.thebluealliance.com/account).  
+You must also add the team you wish to send tweets for in [myTBA](https://www.thebluealliance.com/account/mytba#my-teams).
 ### Compiling
 Before compiling, be sure that you have all of the required packages:
 * libcurl
