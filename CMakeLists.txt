@@ -9,7 +9,9 @@ add_executable(TBATwitterUpdates main.cpp
         twitterwrapper/Twitter.cpp
         twitterwrapper/Twitter.h
         httpserver/handlers/WebhookHandler.cpp
-        httpserver/handlers/WebhookHandler.h)
+        httpserver/handlers/WebhookHandler.h
+        Config.cpp
+        Config.h httpserver/headers/XTBAChecksum.h)
 
 set(PISTACHE_INCLUDE_DIR "httpserver/pistache/include")
 set(HEADER_SEARCH_PATHS ${PISTACHE_INCLUDE_DIR})
@@ -25,3 +27,4 @@ target_link_libraries(${PROJECT_NAME} ${LIBRARIES_SEARCH_PATHS})
 target_link_libraries(TBATwitterUpdates curl)
 target_link_libraries(TBATwitterUpdates oauth)
 target_link_libraries(TBATwitterUpdates pthread)
+target_link_libraries(TBATwitterUpdates crypto++)
