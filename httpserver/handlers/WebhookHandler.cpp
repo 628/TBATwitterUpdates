@@ -77,7 +77,7 @@ bool verifyMatchFields(Match match)
 
 void WebhookHandler::onRequest(const Http::Request &request, Http::ResponseWriter response)
 {
-    /*std::string checkSumHeader = request.headers().getRaw("X-TBA-Checksum").value();
+    std::string checkSumHeader = request.headers().getRaw("X-TBA-Checksum").value();
     std::string checkSum = genSHA1Hash(Config::get("secret") + request.body());
 
     // Make lowercase
@@ -88,7 +88,7 @@ void WebhookHandler::onRequest(const Http::Request &request, Http::ResponseWrite
     {
         response.send(Http::Code::Forbidden);
         return;
-    }*/
+    }
 
     auto jsonBody = json::parse(request.body());
 
