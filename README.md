@@ -35,7 +35,7 @@ $ sudo make install
 ## Usage
 
 ```
-$ TBATwitterUpdates [pathToConfigFile]
+$ TBATwitterUpdates <pathToConfigFile>
 ```
 
 ## Config
