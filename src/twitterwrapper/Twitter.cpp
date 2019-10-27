@@ -4,7 +4,7 @@
 #include <iostream>
 #include <algorithm>
 #include "Twitter.h"
-#include "HttpRequest.h"
+#include "../HttpRequest.h"
 
 #define urlEncode(str) std::string(oauth_url_escape(str.c_str()))
 

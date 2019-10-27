@@ -4,8 +4,8 @@ project(TBATwitterUpdates)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(TBATwitterUpdates main.cpp
-        twitterwrapper/HttpRequest.cpp
-        twitterwrapper/HttpRequest.h
+        HttpRequest.cpp
+        HttpRequest.h
         twitterwrapper/Twitter.cpp
         twitterwrapper/Twitter.h
         httpserver/handlers/WebhookHandler.cpp

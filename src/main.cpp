@@ -2,7 +2,7 @@
 #include <curl/curl.h>
 #include <oauth.h>
 #include <nlohmann/json.hpp>
-#include "twitterwrapper/HttpRequest.h"
+#include "HttpRequest.h"
 #include "pistache/endpoint.h"
 #include "httpserver/handlers/WebhookHandler.h"
 #include "Config.h"
