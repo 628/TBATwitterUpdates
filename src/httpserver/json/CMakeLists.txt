@@ -74,17 +74,6 @@ if (MSVC)
 endif()
 
 ##
-## TESTS
-## create and configure the unit test target
-##
-include(CTest) #adds option BUILD_TESTING (default ON)
-
-if(BUILD_TESTING AND JSON_BuildTests)
-    enable_testing()
-    add_subdirectory(test)
-endif()
-
-##
 ## INSTALL
 ## install header files, generate and install cmake config files for find_package()
 ##
