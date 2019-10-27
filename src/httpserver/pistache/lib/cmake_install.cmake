@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache
+# Install script for directory: /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,16 +38,16 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/pistache" TYPE FILE FILES "/mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build/include/pistache/version.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/pistache" TYPE FILE FILES "/mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build/include/pistache/version.h")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build/libpistache.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build/libpistache.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build/src/cmake_install.cmake")
+  include("/mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build/src/cmake_install.cmake")
 
 endif()
 
@@ -59,5 +59,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

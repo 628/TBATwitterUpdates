@@ -61,18 +61,6 @@ target_include_directories(
     $<INSTALL_INTERFACE:include>
 )
 
-## add debug view definition file for msvc (natvis)
-if (MSVC)
-    set(NLOHMANN_ADD_NATVIS TRUE)
-    set(NLOHMANN_NATVIS_FILE "nlohmann_json.natvis")
-    target_sources(
-        ${NLOHMANN_JSON_TARGET_NAME}
-        INTERFACE
-            $<INSTALL_INTERFACE:${NLOHMANN_NATVIS_FILE}>
-            $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${NLOHMANN_NATVIS_FILE}>
-    )
-endif()
-
 ##
 ## INSTALL
 ## install header files, generate and install cmake config files for find_package()

@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/src
+# Install script for directory: /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,8 +50,8 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     endif()
   endforeach()
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES
-    "/mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build/src/libpistache.so.0.0.001-git20191017"
-    "/mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build/src/libpistache.so.0"
+    "/mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build/src/libpistache.so.0.0.001-git20191017"
+    "/mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build/src/libpistache.so.0"
     )
   foreach(file
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpistache.so.0.0.001-git20191017"
@@ -73,7 +73,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpistache.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build/src/libpistache.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build/src/libpistache.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpistache.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpistache.so")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -83,18 +83,18 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/include/pistache" FILES_MATCHING REGEX "/[^/]*\\.[^/]*h$")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/include/pistache" FILES_MATCHING REGEX "/[^/]*\\.[^/]*h$")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build/src/libpistache.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build/src/libpistache.a")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xcmake-configx" OR NOT CMAKE_INSTALL_COMPONENT)
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/pistache/PistacheTargets.cmake")
     file(DIFFERENT EXPORT_FILE_CHANGED FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/pistache/PistacheTargets.cmake"
-         "/mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build/src/CMakeFiles/Export/lib/cmake/pistache/PistacheTargets.cmake")
+         "/mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build/src/CMakeFiles/Export/lib/cmake/pistache/PistacheTargets.cmake")
     if(EXPORT_FILE_CHANGED)
       file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/pistache/PistacheTargets-*.cmake")
       if(OLD_CONFIG_FILES)
@@ -103,13 +103,13 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xcmake-configx" OR NOT CMAKE_INSTALL
       endif()
     endif()
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/pistache" TYPE FILE FILES "/mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build/src/CMakeFiles/Export/lib/cmake/pistache/PistacheTargets.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/pistache" TYPE FILE FILES "/mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build/src/CMakeFiles/Export/lib/cmake/pistache/PistacheTargets.cmake")
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/pistache" TYPE FILE FILES "/mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build/src/CMakeFiles/Export/lib/cmake/pistache/PistacheTargets-release.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/pistache" TYPE FILE FILES "/mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build/src/CMakeFiles/Export/lib/cmake/pistache/PistacheTargets-release.cmake")
   endif()
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xcmake-configx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/pistache" TYPE FILE FILES "/mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build/src/PistacheConfig.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/pistache" TYPE FILE FILES "/mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build/src/PistacheConfig.cmake")
 endif()
 

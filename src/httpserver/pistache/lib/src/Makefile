@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache
+CMAKE_SOURCE_DIR = /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build
+CMAKE_BINARY_DIR = /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -116,7 +116,7 @@ install/local/fast: preinstall/fast
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -127,7 +127,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build/CPackSourceConfig.cmake
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -148,14 +148,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build/CMakeFiles /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build/src/CMakeFiles/progress.marks
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build/CMakeFiles 0
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build/CMakeFiles /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build/src/CMakeFiles/progress.marks
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -165,22 +165,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/pistache.dir/rule:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/pistache.dir/rule
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/pistache.dir/rule
 .PHONY : src/CMakeFiles/pistache.dir/rule
 
 # Convenience name for target.
@@ -190,12 +190,12 @@ pistache: src/CMakeFiles/pistache.dir/rule
 
 # fast build rule for target.
 pistache/fast:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/build
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/build
 .PHONY : pistache/fast
 
 # Convenience name for target.
 src/CMakeFiles/pistache_static.dir/rule:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/pistache_static.dir/rule
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/pistache_static.dir/rule
 .PHONY : src/CMakeFiles/pistache_static.dir/rule
 
 # Convenience name for target.
@@ -205,12 +205,12 @@ pistache_static: src/CMakeFiles/pistache_static.dir/rule
 
 # fast build rule for target.
 pistache_static/fast:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache_static.dir/build.make src/CMakeFiles/pistache_static.dir/build
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache_static.dir/build.make src/CMakeFiles/pistache_static.dir/build
 .PHONY : pistache_static/fast
 
 # Convenience name for target.
 src/CMakeFiles/pistache_shared.dir/rule:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/pistache_shared.dir/rule
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/pistache_shared.dir/rule
 .PHONY : src/CMakeFiles/pistache_shared.dir/rule
 
 # Convenience name for target.
@@ -220,7 +220,7 @@ pistache_shared: src/CMakeFiles/pistache_shared.dir/rule
 
 # fast build rule for target.
 pistache_shared/fast:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache_shared.dir/build.make src/CMakeFiles/pistache_shared.dir/build
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache_shared.dir/build.make src/CMakeFiles/pistache_shared.dir/build
 .PHONY : pistache_shared/fast
 
 client/client.o: client/client.cc.o
@@ -229,7 +229,7 @@ client/client.o: client/client.cc.o
 
 # target to build an object file
 client/client.cc.o:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/client/client.cc.o
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/client/client.cc.o
 .PHONY : client/client.cc.o
 
 client/client.i: client/client.cc.i
@@ -238,7 +238,7 @@ client/client.i: client/client.cc.i
 
 # target to preprocess a source file
 client/client.cc.i:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/client/client.cc.i
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/client/client.cc.i
 .PHONY : client/client.cc.i
 
 client/client.s: client/client.cc.s
@@ -247,7 +247,7 @@ client/client.s: client/client.cc.s
 
 # target to generate assembly for a file
 client/client.cc.s:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/client/client.cc.s
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/client/client.cc.s
 .PHONY : client/client.cc.s
 
 common/cookie.o: common/cookie.cc.o
@@ -256,7 +256,7 @@ common/cookie.o: common/cookie.cc.o
 
 # target to build an object file
 common/cookie.cc.o:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/cookie.cc.o
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/cookie.cc.o
 .PHONY : common/cookie.cc.o
 
 common/cookie.i: common/cookie.cc.i
@@ -265,7 +265,7 @@ common/cookie.i: common/cookie.cc.i
 
 # target to preprocess a source file
 common/cookie.cc.i:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/cookie.cc.i
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/cookie.cc.i
 .PHONY : common/cookie.cc.i
 
 common/cookie.s: common/cookie.cc.s
@@ -274,7 +274,7 @@ common/cookie.s: common/cookie.cc.s
 
 # target to generate assembly for a file
 common/cookie.cc.s:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/cookie.cc.s
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/cookie.cc.s
 .PHONY : common/cookie.cc.s
 
 common/description.o: common/description.cc.o
@@ -283,7 +283,7 @@ common/description.o: common/description.cc.o
 
 # target to build an object file
 common/description.cc.o:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/description.cc.o
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/description.cc.o
 .PHONY : common/description.cc.o
 
 common/description.i: common/description.cc.i
@@ -292,7 +292,7 @@ common/description.i: common/description.cc.i
 
 # target to preprocess a source file
 common/description.cc.i:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/description.cc.i
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/description.cc.i
 .PHONY : common/description.cc.i
 
 common/description.s: common/description.cc.s
@@ -301,7 +301,7 @@ common/description.s: common/description.cc.s
 
 # target to generate assembly for a file
 common/description.cc.s:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/description.cc.s
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/description.cc.s
 .PHONY : common/description.cc.s
 
 common/http.o: common/http.cc.o
@@ -310,7 +310,7 @@ common/http.o: common/http.cc.o
 
 # target to build an object file
 common/http.cc.o:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/http.cc.o
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/http.cc.o
 .PHONY : common/http.cc.o
 
 common/http.i: common/http.cc.i
@@ -319,7 +319,7 @@ common/http.i: common/http.cc.i
 
 # target to preprocess a source file
 common/http.cc.i:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/http.cc.i
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/http.cc.i
 .PHONY : common/http.cc.i
 
 common/http.s: common/http.cc.s
@@ -328,7 +328,7 @@ common/http.s: common/http.cc.s
 
 # target to generate assembly for a file
 common/http.cc.s:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/http.cc.s
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/http.cc.s
 .PHONY : common/http.cc.s
 
 common/http_defs.o: common/http_defs.cc.o
@@ -337,7 +337,7 @@ common/http_defs.o: common/http_defs.cc.o
 
 # target to build an object file
 common/http_defs.cc.o:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/http_defs.cc.o
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/http_defs.cc.o
 .PHONY : common/http_defs.cc.o
 
 common/http_defs.i: common/http_defs.cc.i
@@ -346,7 +346,7 @@ common/http_defs.i: common/http_defs.cc.i
 
 # target to preprocess a source file
 common/http_defs.cc.i:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/http_defs.cc.i
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/http_defs.cc.i
 .PHONY : common/http_defs.cc.i
 
 common/http_defs.s: common/http_defs.cc.s
@@ -355,7 +355,7 @@ common/http_defs.s: common/http_defs.cc.s
 
 # target to generate assembly for a file
 common/http_defs.cc.s:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/http_defs.cc.s
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/http_defs.cc.s
 .PHONY : common/http_defs.cc.s
 
 common/http_header.o: common/http_header.cc.o
@@ -364,7 +364,7 @@ common/http_header.o: common/http_header.cc.o
 
 # target to build an object file
 common/http_header.cc.o:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/http_header.cc.o
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/http_header.cc.o
 .PHONY : common/http_header.cc.o
 
 common/http_header.i: common/http_header.cc.i
@@ -373,7 +373,7 @@ common/http_header.i: common/http_header.cc.i
 
 # target to preprocess a source file
 common/http_header.cc.i:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/http_header.cc.i
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/http_header.cc.i
 .PHONY : common/http_header.cc.i
 
 common/http_header.s: common/http_header.cc.s
@@ -382,7 +382,7 @@ common/http_header.s: common/http_header.cc.s
 
 # target to generate assembly for a file
 common/http_header.cc.s:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/http_header.cc.s
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/http_header.cc.s
 .PHONY : common/http_header.cc.s
 
 common/http_headers.o: common/http_headers.cc.o
@@ -391,7 +391,7 @@ common/http_headers.o: common/http_headers.cc.o
 
 # target to build an object file
 common/http_headers.cc.o:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/http_headers.cc.o
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/http_headers.cc.o
 .PHONY : common/http_headers.cc.o
 
 common/http_headers.i: common/http_headers.cc.i
@@ -400,7 +400,7 @@ common/http_headers.i: common/http_headers.cc.i
 
 # target to preprocess a source file
 common/http_headers.cc.i:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/http_headers.cc.i
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/http_headers.cc.i
 .PHONY : common/http_headers.cc.i
 
 common/http_headers.s: common/http_headers.cc.s
@@ -409,7 +409,7 @@ common/http_headers.s: common/http_headers.cc.s
 
 # target to generate assembly for a file
 common/http_headers.cc.s:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/http_headers.cc.s
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/http_headers.cc.s
 .PHONY : common/http_headers.cc.s
 
 common/mime.o: common/mime.cc.o
@@ -418,7 +418,7 @@ common/mime.o: common/mime.cc.o
 
 # target to build an object file
 common/mime.cc.o:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/mime.cc.o
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/mime.cc.o
 .PHONY : common/mime.cc.o
 
 common/mime.i: common/mime.cc.i
@@ -427,7 +427,7 @@ common/mime.i: common/mime.cc.i
 
 # target to preprocess a source file
 common/mime.cc.i:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/mime.cc.i
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/mime.cc.i
 .PHONY : common/mime.cc.i
 
 common/mime.s: common/mime.cc.s
@@ -436,7 +436,7 @@ common/mime.s: common/mime.cc.s
 
 # target to generate assembly for a file
 common/mime.cc.s:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/mime.cc.s
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/mime.cc.s
 .PHONY : common/mime.cc.s
 
 common/net.o: common/net.cc.o
@@ -445,7 +445,7 @@ common/net.o: common/net.cc.o
 
 # target to build an object file
 common/net.cc.o:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/net.cc.o
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/net.cc.o
 .PHONY : common/net.cc.o
 
 common/net.i: common/net.cc.i
@@ -454,7 +454,7 @@ common/net.i: common/net.cc.i
 
 # target to preprocess a source file
 common/net.cc.i:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/net.cc.i
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/net.cc.i
 .PHONY : common/net.cc.i
 
 common/net.s: common/net.cc.s
@@ -463,7 +463,7 @@ common/net.s: common/net.cc.s
 
 # target to generate assembly for a file
 common/net.cc.s:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/net.cc.s
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/net.cc.s
 .PHONY : common/net.cc.s
 
 common/os.o: common/os.cc.o
@@ -472,7 +472,7 @@ common/os.o: common/os.cc.o
 
 # target to build an object file
 common/os.cc.o:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/os.cc.o
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/os.cc.o
 .PHONY : common/os.cc.o
 
 common/os.i: common/os.cc.i
@@ -481,7 +481,7 @@ common/os.i: common/os.cc.i
 
 # target to preprocess a source file
 common/os.cc.i:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/os.cc.i
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/os.cc.i
 .PHONY : common/os.cc.i
 
 common/os.s: common/os.cc.s
@@ -490,7 +490,7 @@ common/os.s: common/os.cc.s
 
 # target to generate assembly for a file
 common/os.cc.s:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/os.cc.s
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/os.cc.s
 .PHONY : common/os.cc.s
 
 common/peer.o: common/peer.cc.o
@@ -499,7 +499,7 @@ common/peer.o: common/peer.cc.o
 
 # target to build an object file
 common/peer.cc.o:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/peer.cc.o
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/peer.cc.o
 .PHONY : common/peer.cc.o
 
 common/peer.i: common/peer.cc.i
@@ -508,7 +508,7 @@ common/peer.i: common/peer.cc.i
 
 # target to preprocess a source file
 common/peer.cc.i:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/peer.cc.i
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/peer.cc.i
 .PHONY : common/peer.cc.i
 
 common/peer.s: common/peer.cc.s
@@ -517,7 +517,7 @@ common/peer.s: common/peer.cc.s
 
 # target to generate assembly for a file
 common/peer.cc.s:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/peer.cc.s
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/peer.cc.s
 .PHONY : common/peer.cc.s
 
 common/reactor.o: common/reactor.cc.o
@@ -526,7 +526,7 @@ common/reactor.o: common/reactor.cc.o
 
 # target to build an object file
 common/reactor.cc.o:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/reactor.cc.o
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/reactor.cc.o
 .PHONY : common/reactor.cc.o
 
 common/reactor.i: common/reactor.cc.i
@@ -535,7 +535,7 @@ common/reactor.i: common/reactor.cc.i
 
 # target to preprocess a source file
 common/reactor.cc.i:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/reactor.cc.i
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/reactor.cc.i
 .PHONY : common/reactor.cc.i
 
 common/reactor.s: common/reactor.cc.s
@@ -544,7 +544,7 @@ common/reactor.s: common/reactor.cc.s
 
 # target to generate assembly for a file
 common/reactor.cc.s:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/reactor.cc.s
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/reactor.cc.s
 .PHONY : common/reactor.cc.s
 
 common/stream.o: common/stream.cc.o
@@ -553,7 +553,7 @@ common/stream.o: common/stream.cc.o
 
 # target to build an object file
 common/stream.cc.o:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/stream.cc.o
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/stream.cc.o
 .PHONY : common/stream.cc.o
 
 common/stream.i: common/stream.cc.i
@@ -562,7 +562,7 @@ common/stream.i: common/stream.cc.i
 
 # target to preprocess a source file
 common/stream.cc.i:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/stream.cc.i
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/stream.cc.i
 .PHONY : common/stream.cc.i
 
 common/stream.s: common/stream.cc.s
@@ -571,7 +571,7 @@ common/stream.s: common/stream.cc.s
 
 # target to generate assembly for a file
 common/stream.cc.s:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/stream.cc.s
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/stream.cc.s
 .PHONY : common/stream.cc.s
 
 common/tcp.o: common/tcp.cc.o
@@ -580,7 +580,7 @@ common/tcp.o: common/tcp.cc.o
 
 # target to build an object file
 common/tcp.cc.o:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/tcp.cc.o
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/tcp.cc.o
 .PHONY : common/tcp.cc.o
 
 common/tcp.i: common/tcp.cc.i
@@ -589,7 +589,7 @@ common/tcp.i: common/tcp.cc.i
 
 # target to preprocess a source file
 common/tcp.cc.i:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/tcp.cc.i
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/tcp.cc.i
 .PHONY : common/tcp.cc.i
 
 common/tcp.s: common/tcp.cc.s
@@ -598,7 +598,7 @@ common/tcp.s: common/tcp.cc.s
 
 # target to generate assembly for a file
 common/tcp.cc.s:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/tcp.cc.s
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/tcp.cc.s
 .PHONY : common/tcp.cc.s
 
 common/timer_pool.o: common/timer_pool.cc.o
@@ -607,7 +607,7 @@ common/timer_pool.o: common/timer_pool.cc.o
 
 # target to build an object file
 common/timer_pool.cc.o:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/timer_pool.cc.o
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/timer_pool.cc.o
 .PHONY : common/timer_pool.cc.o
 
 common/timer_pool.i: common/timer_pool.cc.i
@@ -616,7 +616,7 @@ common/timer_pool.i: common/timer_pool.cc.i
 
 # target to preprocess a source file
 common/timer_pool.cc.i:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/timer_pool.cc.i
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/timer_pool.cc.i
 .PHONY : common/timer_pool.cc.i
 
 common/timer_pool.s: common/timer_pool.cc.s
@@ -625,7 +625,7 @@ common/timer_pool.s: common/timer_pool.cc.s
 
 # target to generate assembly for a file
 common/timer_pool.cc.s:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/timer_pool.cc.s
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/timer_pool.cc.s
 .PHONY : common/timer_pool.cc.s
 
 common/transport.o: common/transport.cc.o
@@ -634,7 +634,7 @@ common/transport.o: common/transport.cc.o
 
 # target to build an object file
 common/transport.cc.o:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/transport.cc.o
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/transport.cc.o
 .PHONY : common/transport.cc.o
 
 common/transport.i: common/transport.cc.i
@@ -643,7 +643,7 @@ common/transport.i: common/transport.cc.i
 
 # target to preprocess a source file
 common/transport.cc.i:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/transport.cc.i
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/transport.cc.i
 .PHONY : common/transport.cc.i
 
 common/transport.s: common/transport.cc.s
@@ -652,7 +652,7 @@ common/transport.s: common/transport.cc.s
 
 # target to generate assembly for a file
 common/transport.cc.s:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/transport.cc.s
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/transport.cc.s
 .PHONY : common/transport.cc.s
 
 common/utils.o: common/utils.cc.o
@@ -661,7 +661,7 @@ common/utils.o: common/utils.cc.o
 
 # target to build an object file
 common/utils.cc.o:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/utils.cc.o
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/utils.cc.o
 .PHONY : common/utils.cc.o
 
 common/utils.i: common/utils.cc.i
@@ -670,7 +670,7 @@ common/utils.i: common/utils.cc.i
 
 # target to preprocess a source file
 common/utils.cc.i:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/utils.cc.i
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/utils.cc.i
 .PHONY : common/utils.cc.i
 
 common/utils.s: common/utils.cc.s
@@ -679,7 +679,7 @@ common/utils.s: common/utils.cc.s
 
 # target to generate assembly for a file
 common/utils.cc.s:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/utils.cc.s
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/common/utils.cc.s
 .PHONY : common/utils.cc.s
 
 server/endpoint.o: server/endpoint.cc.o
@@ -688,7 +688,7 @@ server/endpoint.o: server/endpoint.cc.o
 
 # target to build an object file
 server/endpoint.cc.o:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/server/endpoint.cc.o
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/server/endpoint.cc.o
 .PHONY : server/endpoint.cc.o
 
 server/endpoint.i: server/endpoint.cc.i
@@ -697,7 +697,7 @@ server/endpoint.i: server/endpoint.cc.i
 
 # target to preprocess a source file
 server/endpoint.cc.i:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/server/endpoint.cc.i
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/server/endpoint.cc.i
 .PHONY : server/endpoint.cc.i
 
 server/endpoint.s: server/endpoint.cc.s
@@ -706,7 +706,7 @@ server/endpoint.s: server/endpoint.cc.s
 
 # target to generate assembly for a file
 server/endpoint.cc.s:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/server/endpoint.cc.s
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/server/endpoint.cc.s
 .PHONY : server/endpoint.cc.s
 
 server/listener.o: server/listener.cc.o
@@ -715,7 +715,7 @@ server/listener.o: server/listener.cc.o
 
 # target to build an object file
 server/listener.cc.o:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/server/listener.cc.o
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/server/listener.cc.o
 .PHONY : server/listener.cc.o
 
 server/listener.i: server/listener.cc.i
@@ -724,7 +724,7 @@ server/listener.i: server/listener.cc.i
 
 # target to preprocess a source file
 server/listener.cc.i:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/server/listener.cc.i
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/server/listener.cc.i
 .PHONY : server/listener.cc.i
 
 server/listener.s: server/listener.cc.s
@@ -733,7 +733,7 @@ server/listener.s: server/listener.cc.s
 
 # target to generate assembly for a file
 server/listener.cc.s:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/server/listener.cc.s
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/server/listener.cc.s
 .PHONY : server/listener.cc.s
 
 server/router.o: server/router.cc.o
@@ -742,7 +742,7 @@ server/router.o: server/router.cc.o
 
 # target to build an object file
 server/router.cc.o:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/server/router.cc.o
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/server/router.cc.o
 .PHONY : server/router.cc.o
 
 server/router.i: server/router.cc.i
@@ -751,7 +751,7 @@ server/router.i: server/router.cc.i
 
 # target to preprocess a source file
 server/router.cc.i:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/server/router.cc.i
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/server/router.cc.i
 .PHONY : server/router.cc.i
 
 server/router.s: server/router.cc.s
@@ -760,7 +760,7 @@ server/router.s: server/router.cc.s
 
 # target to generate assembly for a file
 server/router.cc.s:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/server/router.cc.s
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(MAKE) -f src/CMakeFiles/pistache.dir/build.make src/CMakeFiles/pistache.dir/server/router.cc.s
 .PHONY : server/router.cc.s
 
 # Help Target
@@ -851,6 +851,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/httpserver/pistache/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /mnt/hdd/Aello/C++/TBATwitterUpdates/src/httpserver/pistache/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
