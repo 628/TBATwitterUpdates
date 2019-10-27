@@ -65,7 +65,7 @@ std::string genSHA1Hash(const std::string &source)
     return output;
 }
 
-bool verifyMatchFields(Match match)
+bool verifyMatchFields(const Match& match)
 {
     return !(match.eventName.empty() ||
              match.compLevel.empty() ||
