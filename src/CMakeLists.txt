@@ -11,7 +11,7 @@ add_executable(TBATwitterUpdates main.cpp
         httpserver/handlers/WebhookHandler.cpp
         httpserver/handlers/WebhookHandler.h
         Config.cpp
-        Config.h httpserver/headers/XTBAChecksum.h)
+        Config.h httpserver/headers/XTBAChecksum.h Logger.cpp Logger.h)
 
 set(PISTACHE_INCLUDE_DIR "httpserver/pistache/include")
 set(HEADER_SEARCH_PATHS ${PISTACHE_INCLUDE_DIR})
