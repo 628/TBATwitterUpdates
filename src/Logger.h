@@ -6,11 +6,10 @@
 
 class Logger
 {
-
+public:
     static void log(std::string log);
     static void debug(std::string log);
     static void error(std::string log);
-    static void fatal(std::string log);
 };
 
 
