@@ -5,6 +5,7 @@
 #include <algorithm>
 #include "Twitter.h"
 #include "../HttpRequest.h"
+#include "../Logger.h"
 
 #define urlEncode(str) std::string(oauth_url_escape(str.c_str()))
 
@@ -49,4 +50,6 @@ bool Twitter::sendTweet(const std::string& messageContent)
     std::string contentField = "status=" + urlEncode(messageContent);
 
     HttpRequest::sendPost(url.c_str(), headers, contentField.c_str());
+
+    Logger::log("Tweet sent!");
 }
