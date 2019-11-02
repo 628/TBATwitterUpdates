@@ -7,6 +7,7 @@
 #include "httpserver/handlers/WebhookHandler.h"
 #include "Config.h"
 #include "httpserver/headers/XTBAChecksum.h"
+#include "Logger.h"
 
 using namespace Pistache;
 
@@ -26,6 +27,10 @@ int main(int argc, char **argv)
 
     Config::loadConfig(std::string(argv[1]));
 
+    Logger::log("Configuration file loaded successfully!");
+
     Http::Header::Registry::instance().registerHeader<XTBAChecksum>();
     Http::listenAndServe<WebhookHandler>("*:" + Config::get("port"));
+
+    Logger::log("Connected to port! Listening for requests...");
 }
