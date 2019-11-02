@@ -1,6 +1,7 @@
 #include "WebhookHandler.h"
 #include "../../Config.h"
 #include "../../twitterwrapper/Twitter.h"
+#include "../../Logger.h"
 #include <nlohmann/json.hpp>
 #include <openssl/sha.h>
 #include <crypto++/sha.h>
@@ -77,6 +78,8 @@ bool verifyMatchFields(const Match& match)
 
 void WebhookHandler::onRequest(const Http::Request &request, Http::ResponseWriter response)
 {
+    Logger::log("Received request.");
+
     std::string checkSumHeader = request.headers().getRaw("X-TBA-Checksum").value();
     std::string checkSum = genSHA1Hash(Config::get("secret") + request.body());
 
@@ -86,9 +89,12 @@ void WebhookHandler::onRequest(const Http::Request &request, Http::ResponseWrite
 
     if (checkSumHeader != checkSum)
     {
+        Logger::error("Checksum does not match!");
         response.send(Http::Code::Forbidden);
         return;
     }
+
+    Logger::log("Checksum matches! Generating request...");
 
     auto jsonBody = json::parse(request.body());
 
@@ -187,6 +193,7 @@ void WebhookHandler::onRequest(const Http::Request &request, Http::ResponseWrite
                 "Result: " + status + "\n" +
                 "Score: " + frcMatch.score + " (" + frcMatch.alliance + ")\n";
 
+        Logger::log("Request generated successfully. Sending tweet...");
         twitter.sendTweet(tweet);
 
         response.send(Http::Code::Ok);
