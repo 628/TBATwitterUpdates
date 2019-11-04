@@ -1,7 +1,6 @@
 #ifndef TBATWITTERUPDATES_HTTPREQUEST_H
 #define TBATWITTERUPDATES_HTTPREQUEST_H
 
-
 #include <curl/curl.h>
 
 class HttpRequest

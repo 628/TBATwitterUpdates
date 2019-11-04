@@ -1,7 +1,6 @@
 #ifndef TBATWITTERUPDATES_LOGGER_H
 #define TBATWITTERUPDATES_LOGGER_H
 
-
 #include <string>
 
 class Logger
