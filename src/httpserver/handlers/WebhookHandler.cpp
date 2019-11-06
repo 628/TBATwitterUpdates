@@ -9,33 +9,15 @@
 #include <algorithm>
 
 using json = nlohmann::json;
+std::map<std::string, std::string> compLevelString;
 
-std::string getFullCompLevelString(const std::string &level)
+void populateCompLevelString()
 {
-    if (level == "qm")
-    {
-        return "Quals";
-    }
-    else if (level == "ef")
-    {
-        return "Eighths";
-    }
-    else if (level == "qf")
-    {
-        return "Quarters";
-    }
-    else if (level == "sf")
-    {
-        return "Semis";
-    }
-    else if (level == "f")
-    {
-        return "Finals";
-    }
-    else
-    {
-        return "";
-    }
+    compLevelString.insert("qm", "Quals");
+    compLevelString.insert("ef", "Eighths");
+    compLevelString.insert("qf", "Quarters");
+    compLevelString.insert("sf", "Semis");
+    compLevelString.insert("f", "Finals");
 }
 
 typedef struct
@@ -78,6 +60,8 @@ bool verifyMatchFields(const Match& match)
 
 void WebhookHandler::onRequest(const Http::Request &request, Http::ResponseWriter response)
 {
+    populateCompLevelString();
+
     Logger::log("Received request.");
 
     std::string checkSumHeader = request.headers().getRaw("X-TBA-Checksum").value();
@@ -165,7 +149,7 @@ void WebhookHandler::onRequest(const Http::Request &request, Http::ResponseWrite
         frcMatch.eventName = data.value("event_name", "NULL");
         frcMatch.matchNum = std::to_string(match.value("match_number", 0));
         frcMatch.won = won;
-        frcMatch.compLevel = getFullCompLevelString(match.value("comp_level", ""));
+        frcMatch.compLevel = compLevelString.at(match.value("comp_level", ""));
 
         if (!verifyMatchFields(frcMatch))
         {
