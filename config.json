@@ -2,8 +2,8 @@
   "port": "3141",
   "team": "frc1718",
   "secret": "verySecret",
-  "accessToken": "",
-  "accessTokenSecret": "",
-  "consumerApiKey": "",
-  "consumerApiKeySecret": ""
+  "accessToken": "xxxx",
+  "accessTokenSecret": "xxxx",
+  "consumerApiKey": "xxxx",
+  "consumerApiKeySecret": "xxxx"
 }
