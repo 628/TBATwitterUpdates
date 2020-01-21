@@ -4,8 +4,8 @@
 #include "../../Logger.h"
 #include <nlohmann/json.hpp>
 #include <openssl/sha.h>
-#include <crypto++/sha.h>
-#include <crypto++/hex.h>
+#include <cryptopp/sha.h>
+#include <cryptopp/hex.h>
 #include <algorithm>
 
 using json = nlohmann::json;
