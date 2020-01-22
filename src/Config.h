@@ -13,7 +13,7 @@ public:
 
     static void loadConfig(const std::string &filePath);
 
-    static std::string get(std::string key);
+    static std::string get(const std::string& key);
 };
 
 

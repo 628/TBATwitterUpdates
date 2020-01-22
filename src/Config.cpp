@@ -15,7 +15,7 @@ void Config::loadConfig(const std::string &filePath)
     input.close();
 }
 
-std::string Config::get(std::string key)
+std::string Config::get(const std::string& key)
 {
     json configJson = json::parse(config);
 

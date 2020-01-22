@@ -20,6 +20,8 @@ Before compiling, be sure that you have all of the required packages:
 * liboauth
 * libpthread
 * libcrypto++
+* pistache
+* nlohmann/json
 
 To compile, execute the following commands:
 ```

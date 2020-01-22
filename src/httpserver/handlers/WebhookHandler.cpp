@@ -1,6 +1,6 @@
 #include "WebhookHandler.h"
 #include "../../Config.h"
-#include "../../twitterwrapper/Twitter.h"
+#include "../../twitter/Twitter.h"
 #include "../../Logger.h"
 #include <nlohmann/json.hpp>
 #include <openssl/sha.h>
@@ -51,9 +51,9 @@ typedef struct
 std::string genSHA1Hash(const std::string &source)
 {
     CryptoPP::SHA1 hash;
-    byte digest[CryptoPP::SHA1::DIGESTSIZE];
+    CryptoPP::byte digest[CryptoPP::SHA1::DIGESTSIZE];
 
-    hash.CalculateDigest(digest, (const byte *) source.c_str(), source.size());
+    hash.CalculateDigest(digest, (const CryptoPP::byte *) source.c_str(), source.size());
 
     std::string output;
     CryptoPP::HexEncoder encoder;

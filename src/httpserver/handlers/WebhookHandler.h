@@ -9,7 +9,6 @@ class WebhookHandler : public Http::Handler
 {
 public:
 HTTP_PROTOTYPE(WebhookHandler)
-
     void onRequest(const Http::Request &request, Http::ResponseWriter response) override;
 };
 

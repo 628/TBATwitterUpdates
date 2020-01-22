@@ -3,28 +3,16 @@ project(TBATwitterUpdates)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(TBATwitterUpdates main.cpp
+add_executable(${PROJECT_NAME} main.cpp
         HttpRequest.cpp
         HttpRequest.h
-        twitterwrapper/Twitter.cpp
-        twitterwrapper/Twitter.h
+        twitter/Twitter.cpp
+        twitter/Twitter.h
         httpserver/handlers/WebhookHandler.cpp
         httpserver/handlers/WebhookHandler.h
         Config.cpp
         Config.h httpserver/headers/XTBAChecksum.h Logger.cpp Logger.h)
 
-set(PISTACHE_INCLUDE_DIR "httpserver/pistache/include")
-set(HEADER_SEARCH_PATHS ${PISTACHE_INCLUDE_DIR})
-set(PISTACHE_LIBRARY "${PROJECT_SOURCE_DIR}/httpserver/pistache/lib/src/libpistache.a")
-set(LIBRARIES_SEARCH_PATHS ${PISTACHE_LIBRARY})
+include_directories(${HEADER_SEARCH_PATHS} /usr/include/nlohmann)
 
-include_directories(${HEADER_SEARCH_PATHS})
-
-add_subdirectory(httpserver/json)
-
-target_link_libraries(TBATwitterUpdates nlohmann_json::nlohmann_json)
-target_link_libraries(${PROJECT_NAME} ${LIBRARIES_SEARCH_PATHS})
-target_link_libraries(TBATwitterUpdates curl)
-target_link_libraries(TBATwitterUpdates oauth)
-target_link_libraries(TBATwitterUpdates pthread)
-target_link_libraries(TBATwitterUpdates crypto++)
+target_link_libraries(${PROJECT_NAME} pistache ${LIBRARIES_SEARCH_PATHS} curl oauth pthread cryptopp)
