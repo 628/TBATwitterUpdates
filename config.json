@@ -1,9 +1,9 @@
 {
   "port": "3141",
   "team": "frc1718",
-  "secret": "jreihojreoihjEJHOIwjhg438590",
-  "accessToken": "804100223811354624-pbnKoBddn1lcXyOusv1pFKkOscFZko5",
-  "accessTokenSecret": "oFt3yHliPNSKyyCaYUUyisn3Fz8jGh5YVUDWK3S5AyGfi",
-  "consumerApiKey": "O47kJRUVx4vQzhHDPM4KqfWVH",
-  "consumerApiKeySecret": "JTtHMlfR9qlFcbaCQTN0MjYFqX6By5imlztRYT91J0EAePj1sV"
+  "secret": "",
+  "accessToken": "",
+  "accessTokenSecret": "",
+  "consumerApiKey": "",
+  "consumerApiKeySecret": ""
 }
