@@ -6,14 +6,13 @@
 #include <fstream>
 #include <nlohmann/json.hpp>
 
-class Config
-{
+class Config {
 public:
     static std::string config;
 
     static void loadConfig(const std::string &filePath);
 
-    static std::string get(const std::string& key);
+    static std::string get(const std::string &key);
 };
 
 

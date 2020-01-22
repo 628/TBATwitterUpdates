@@ -6,23 +6,18 @@
 
 using namespace Pistache;
 
-class XTBAChecksum : public Http::Header::Header
-{
+class XTBAChecksum : public Http::Header::Header {
 public:
     NAME("X-TBA-Checksum");
 
     XTBAChecksum()
-            : checkSum()
-    {}
+            : checkSum() {}
 
-    void parse(const std::string &str) override
-    {}
+    void parse(const std::string &str) override {}
 
-    void write(std::ostream &os) const override
-    {}
+    void write(std::ostream &os) const override {}
 
-    std::string getCheckSum()
-    {
+    std::string getCheckSum() {
         return checkSum;
     }
 

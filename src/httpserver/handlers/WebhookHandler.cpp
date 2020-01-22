@@ -10,36 +10,23 @@
 
 using json = nlohmann::json;
 
-std::string getFullCompLevelString(const std::string &level)
-{
-    if (level == "qm")
-    {
+std::string getFullCompLevelString(const std::string &level) {
+    if (level == "qm") {
         return "Quals";
-    }
-    else if (level == "ef")
-    {
+    } else if (level == "ef") {
         return "Eighths";
-    }
-    else if (level == "qf")
-    {
+    } else if (level == "qf") {
         return "Quarters";
-    }
-    else if (level == "sf")
-    {
+    } else if (level == "sf") {
         return "Semis";
-    }
-    else if (level == "f")
-    {
+    } else if (level == "f") {
         return "Finals";
-    }
-    else
-    {
+    } else {
         return "";
     }
 }
 
-typedef struct
-{
+typedef struct {
     std::string eventName;
     std::string compLevel;
     std::string matchNum;
@@ -48,8 +35,7 @@ typedef struct
     bool won;
 } Match;
 
-std::string genSHA1Hash(const std::string &source)
-{
+std::string genSHA1Hash(const std::string &source) {
     CryptoPP::SHA1 hash;
     CryptoPP::byte digest[CryptoPP::SHA1::DIGESTSIZE];
 
@@ -66,8 +52,7 @@ std::string genSHA1Hash(const std::string &source)
     return output;
 }
 
-bool verifyMatchFields(const Match& match)
-{
+bool verifyMatchFields(const Match &match) {
     return !(match.eventName.empty() ||
              match.compLevel.empty() ||
              match.matchNum.empty() ||
@@ -76,19 +61,16 @@ bool verifyMatchFields(const Match& match)
 
 }
 
-void WebhookHandler::onRequest(const Http::Request &request, Http::ResponseWriter response)
-{
+void WebhookHandler::onRequest(const Http::Request &request, Http::ResponseWriter response) {
     Logger::log("Received request.");
 
     std::string checkSumHeader = request.headers().getRaw("X-TBA-Checksum").value();
     std::string checkSum = genSHA1Hash(Config::get("secret") + request.body());
 
     // Make lowercase
-    std::transform(checkSum.begin(), checkSum.end(), checkSum.begin(), [](unsigned char c)
-    { return std::tolower(c); });
+    std::transform(checkSum.begin(), checkSum.end(), checkSum.begin(), [](unsigned char c) { return std::tolower(c); });
 
-    if (checkSumHeader != checkSum)
-    {
+    if (checkSumHeader != checkSum) {
         Logger::error("Checksum does not match!");
         response.send(Http::Code::Forbidden);
         return;
@@ -100,33 +82,26 @@ void WebhookHandler::onRequest(const Http::Request &request, Http::ResponseWrite
 
     std::string messageType = jsonBody.value("message_type", "NULL");
 
-    if (messageType == "NULL")
-    {
+    if (messageType == "NULL") {
         response.send(Http::Code::Bad_Request);
         return;
     }
 
-    if (messageType == "verification")
-    {
+    if (messageType == "verification") {
         json data = jsonBody.at("/message_data"_json_pointer);
         std::string verificationKey = data.value("verification_key", "NULL");
 
-        if (verificationKey != "NULL")
-        {
+        if (verificationKey != "NULL") {
             std::cout << "Your verification key is " << verificationKey
                       << "! Please enter it on your TBA account." << std::endl;
 
             response.send(Http::Code::Ok);
             return;
-        }
-        else
-        {
+        } else {
             response.send(Http::Code::Bad_Request);
             return;
         }
-    }
-    else if (messageType == "match_score")
-    {
+    } else if (messageType == "match_score") {
         Match frcMatch{};
 
         json data = jsonBody.at("/message_data"_json_pointer);
@@ -142,20 +117,16 @@ void WebhookHandler::onRequest(const Http::Request &request, Http::ResponseWrite
         int redScore = redAlliance.value("score", 0);
         int blueScore = blueAlliance.value("score", 0);
 
-        for (const std::string &s : blueTeams)
-        {
-            if (s == Config::get("team"))
-            {
+        for (const std::string &s : blueTeams) {
+            if (s == Config::get("team")) {
                 frcMatch.alliance = "Blue Alliance";
                 frcMatch.score = std::to_string(blueScore);
                 won = blueScore > redScore;
             }
         }
 
-        for (const std::string &s : redTeams)
-        {
-            if (s == Config::get("team"))
-            {
+        for (const std::string &s : redTeams) {
+            if (s == Config::get("team")) {
                 frcMatch.alliance = "Red Alliance";
                 frcMatch.score = std::to_string(redScore);
                 won = redScore > blueScore;
@@ -167,40 +138,34 @@ void WebhookHandler::onRequest(const Http::Request &request, Http::ResponseWrite
         frcMatch.won = won;
         frcMatch.compLevel = getFullCompLevelString(match.value("comp_level", ""));
 
-        if (!verifyMatchFields(frcMatch))
-        {
+        if (!verifyMatchFields(frcMatch)) {
             response.send(Http::Code::Bad_Request);
             return;
         }
 
         Twitter twitter(Config::get("accessToken"),
-                Config::get("consumerApiKey"),
-                Config::get("accessTokenSecret"),
-                Config::get("consumerApiKeySecret"));
+                        Config::get("consumerApiKey"),
+                        Config::get("accessTokenSecret"),
+                        Config::get("consumerApiKeySecret"));
 
         std::string status;
 
-        if (frcMatch.won)
-        {
+        if (frcMatch.won) {
             status = "Win";
-        }
-        else
-        {
+        } else {
             status = "Loss";
         }
 
         std::string tweet = frcMatch.eventName + " - " + frcMatch.compLevel + " " + frcMatch.matchNum + "\n" +
-                "Result: " + status + "\n" +
-                "Score: " + frcMatch.score + " (" + frcMatch.alliance + ")\n";
+                            "Result: " + status + "\n" +
+                            "Score: " + frcMatch.score + " (" + frcMatch.alliance + ")\n";
 
         Logger::log("Request generated successfully. Sending tweet...");
         twitter.sendTweet(tweet);
 
         response.send(Http::Code::Ok);
         return;
-    }
-    else
-    {
+    } else {
         response.send(Http::Code::Ok);
         return;
     }

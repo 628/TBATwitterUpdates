@@ -4,8 +4,7 @@ using json = nlohmann::json;
 
 std::string Config::config;
 
-void Config::loadConfig(const std::string &filePath)
-{
+void Config::loadConfig(const std::string &filePath) {
     std::ifstream input;
     input.open(filePath);
 
@@ -15,8 +14,7 @@ void Config::loadConfig(const std::string &filePath)
     input.close();
 }
 
-std::string Config::get(const std::string& key)
-{
+std::string Config::get(const std::string &key) {
     json configJson = json::parse(config);
 
     return configJson.value(key, "");

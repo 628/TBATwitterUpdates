@@ -9,26 +9,24 @@
 #include <utility>
 #include <oauth.h>
 
-class Twitter
-{
+class Twitter {
 public:
     std::string authToken;
     std::string consumerKey;
     std::string authTokenSecret;
     std::string consumerKeySecret;
 
-    Twitter(std::string token, std::string key, std::string tokenSecret, std::string keySecret)
-    {
+    Twitter(std::string token, std::string key, std::string tokenSecret, std::string keySecret) {
         authToken = std::move(token);
         consumerKey = std::move(key);
         consumerKeySecret = std::move(keySecret);
         authTokenSecret = std::move(tokenSecret);
     }
 
-    bool sendTweet(const std::string& messageContent);
+    bool sendTweet(const std::string &messageContent);
+
 private:
-    typedef struct
-    {
+    typedef struct {
         std::string consumerKey;
         std::string nonce = oauth_gen_nonce();
         std::string signature;
